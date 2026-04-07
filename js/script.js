@@ -80,3 +80,6 @@ const cronometro = setInterval(() => {
 // ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
 let arrayNumeriUtente = [];
 
+// ELEMENTO INPUT CHE COLLEGO A JS TRAMITE LA CLASSE AGGIUNTA
+let numeriUtente = document.querySelector(".input-utente");
+
