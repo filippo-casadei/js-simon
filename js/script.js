@@ -18,7 +18,7 @@
 // 5) - nascondere timer e numeri random
 // 5) - rendere visibili i form da compilare e il messaggio
 // =========================================================================================
-
+// 6) rendere visibile il form per inserirei numeri
 
 
 
@@ -67,6 +67,8 @@ const cronometro = setInterval(() => {
     countdown.classList.add("d-none");
     numbersList.classList.add("d-none");
     instructions.classList.add("d-none");
+
+    answersForm.classList.remove("d-none");
     }
     
 }, 1000);
