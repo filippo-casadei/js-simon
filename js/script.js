@@ -64,6 +64,7 @@ const cronometro = setInterval(() => {
 
     // QUANDO IL TIMER ARRIVA A 0
     countdown.classList.add("d-none");
+    numbersList.classList.add("d-none");
     }
     
 }, 1000);
