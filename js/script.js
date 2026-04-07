@@ -45,4 +45,5 @@ for (let i = 0; i <= 4; i++) {
 // CON INNERHTML SCRIVO I NUMERI ALL'INTERNO DI number-list IN HTML
 numbersList.innerHTML = stringaHtml;
     
-    
+// VARIABILE PER I SECONDI 
+let secondi = 30;
