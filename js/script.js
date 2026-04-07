@@ -19,6 +19,10 @@
 // 5) - rendere visibili i form da compilare e il messaggio
 // =========================================================================================
 // 6) rendere visibile il form per inserirei numeri
+// =========================================================================================
+// 7) prendere gli input inseriti dall'utente e inserirli in un array che verrà confrontato
+// con l'array con i 5 numeri random
+// =========================================================================================
 
 
 
@@ -67,8 +71,12 @@ const cronometro = setInterval(() => {
     countdown.classList.add("d-none");
     numbersList.classList.add("d-none");
     instructions.classList.add("d-none");
-
+    // 6) INPUT VISIBILI ALLO SCADERE DEI 30 SECONDI
     answersForm.classList.remove("d-none");
     }
     
 }, 1000);
+
+// ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
+let arrayNumeriUtente = [];
+
