@@ -47,5 +47,15 @@ numbersList.innerHTML = stringaHtml;
     
 // 4) VARIABILE PER I SECONDI 
 let secondi = 30;
+countdown.innerHTML = secondi;
 
 // 4) VARIABILE PER IL TIMER 
+const cronometro = setInterval(() => {
+    secondi = secondi -1;
+    countdown.innerHTML = secondi;
+
+    if (secondi === 0) {
+        clearInterval(cronometro);
+    }
+    
+}, 1000);
