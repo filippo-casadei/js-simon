@@ -38,6 +38,7 @@ const countdown = document.querySelector("#countdown");
 const numbersList = document.querySelector("#numbers-list");
 const answersForm = document.querySelector("#answers-form");
 const message = document.querySelector("#message");
+const instructions = document.querySelector("#instructions");
 
 
 // 3) STRINGA VUOTA DENTRO LA QUALE CICLO GLI ELEMENTI DELL'ARRAY
@@ -62,9 +63,10 @@ const cronometro = setInterval(() => {
     if (secondi === 0) {
         clearInterval(cronometro);
 
-    // QUANDO IL TIMER ARRIVA A 0
+    // 5) QUANDO IL TIMER ARRIVA A 0
     countdown.classList.add("d-none");
     numbersList.classList.add("d-none");
+    instructions.classList.add("d-none");
     }
     
 }, 1000);
