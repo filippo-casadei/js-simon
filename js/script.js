@@ -77,9 +77,15 @@ const cronometro = setInterval(() => {
     
 }, 1000);
 
-// ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
+// 7) ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
 let arrayNumeriUtente = [];
 
-// ELEMENTO INPUT CHE COLLEGO A JS TRAMITE LA CLASSE AGGIUNTA
-let numeriUtente = document.querySelector(".input-utente");
+// 7) ELEMENTO INPUT CHE COLLEGO A JS TRAMITE LA CLASSE AGGIUNTA
+let numeriUtente = document.querySelectorAll(".input-utente");
+
+// 7) CICLO FOR PER INSERIRE NELL'ARRAYNUMERIUTENTE I NUMERI INSERITI DALL UTENTE
+for ( let i = 0; i < numeriUtente.length; i++) {
+let numeroUtente = Number(numeriUtente[i].value);
+arrayNumeriUtente.push(numeroUtente);
+}
 
