@@ -61,6 +61,9 @@ const cronometro = setInterval(() => {
 
     if (secondi === 0) {
         clearInterval(cronometro);
+
+    // QUANDO IL TIMER ARRIVA A 0
+    countdown.classList.add("d-none");
     }
     
 }, 1000);
