@@ -23,7 +23,7 @@
 // 7) prendere gli input inseriti dall'utente e inserirli in un array che verrà confrontato
 // con l'array con i 5 numeri random
 // =========================================================================================
-
+// 8) Stampo in html usando l'id univoco message il risultato
 
 
 // 1) ARRAY VUOTO + CICLO WHILE PER CREARE ARRAY DI 5 NUMERI RANDOM
@@ -77,6 +77,9 @@ const cronometro = setInterval(() => {
     
 }, 1000);
 
+
+
+
 // 7) ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
 let arrayNumeriUtente = [];
 
@@ -89,3 +92,17 @@ let numeroUtente = Number(numeriUtente[i].value);
 arrayNumeriUtente.push(numeroUtente);
 }
 
+// CONFRONTO FRA ARRAY NUMERI UTENTE E ARRAY NUMERI RANDOM
+// ARRAY VUOTO DOVE INSERIRE I NUMERI CHE COMBACIANO
+let numeriIndovinati = [];
+
+// CICLO FOR CHE INSERISCE NELL'ARRAY I NUMERI CHE COMBACIANO
+for (let i = 0; i < numeriUtente.lengtht; i++) {
+    let numero = arrayNumeriUtente[i];
+    
+    if ( arrayDiCinqueNumeriVuoto.includes(numero))
+        numeriIndovinati.push(numero);
+}
+
+// MESSAGGIO PER I NUMERI CHE COINCIDONO
+message.innerHTML = `Hai indovinato ${numeriIndovinati.length} numeri: ${numeriIndovinati.join(", ")}
