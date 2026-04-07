@@ -13,6 +13,11 @@
 // 4) Creo una variabile per i secondi che deve essere === 30.
 // 4) Creo un event timer con setInterval in modo che ogni secondo scenda di 1
 // 4) lo mostro in HTML usando l'id countdown che ho "preso" in precedenza.
+// =========================================================================================
+// 5) allo scadere dei 30 secondi bisogna:
+// 5) - nascondere timer e numeri random
+// 5) - rendere visibili i form da compilare e il messaggio
+// =========================================================================================
 
 
 
