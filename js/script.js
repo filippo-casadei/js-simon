@@ -37,5 +37,8 @@ let stringaHtml = "";
 for (let i = 0; i <= 4; i++) {
     stringaHtml = stringaHtml + `<li>${arrayDiCinqueNumeriVuoto[i]}</li>`
 }
+
+// CON INNERHTML SCRIVO I NUMERI ALL'INTERNO DI number-list IN HTML
+numbersList.innerHTML = stringaHtml
     
     
