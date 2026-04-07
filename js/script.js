@@ -30,8 +30,8 @@
 let arrayDiCinqueNumeriVuoto = [];
 
 while (arrayDiCinqueNumeriVuoto.length < 5) {
-    let numeroRandom = Math.floor (Math.random() * 50) +1;
-    if (!arrayDiCinqueNumeriVuoto.includes(numeroRandom)){
+    let numeroRandom = Math.floor(Math.random() * 50) + 1;
+    if (!arrayDiCinqueNumeriVuoto.includes(numeroRandom)) {
         arrayDiCinqueNumeriVuoto.push(numeroRandom);
     }
 
@@ -54,56 +54,59 @@ for (let i = 0; i <= 4; i++) {
 
 // 3) CON INNERHTML SCRIVO I NUMERI ALL'INTERNO DI number-list IN HTML
 numbersList.innerHTML = stringaHtml;
-    
+
 // 4) VARIABILE PER I SECONDI 
 let secondi = 30;
 countdown.innerHTML = secondi;
 
 // 4) VARIABILE PER IL TIMER 
 const cronometro = setInterval(() => {
-    secondi = secondi -1;
+    secondi = secondi - 1;
     countdown.innerHTML = secondi;
 
     if (secondi === 0) {
         clearInterval(cronometro);
 
-    // 5) QUANDO IL TIMER ARRIVA A 0
-    countdown.classList.add("d-none");
-    numbersList.classList.add("d-none");
-    instructions.classList.add("d-none");
-    // 6) INPUT VISIBILI ALLO SCADERE DEI 30 SECONDI
-    answersForm.classList.remove("d-none");
+        // 5) QUANDO IL TIMER ARRIVA A 0
+        countdown.classList.add("d-none");
+        numbersList.classList.add("d-none");
+        instructions.classList.add("d-none");
+        // 6) INPUT VISIBILI ALLO SCADERE DEI 30 SECONDI
+        answersForm.classList.remove("d-none");
     }
-    
+
 }, 1000);
 
 
 
+answersForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+        // 7) ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
+        let arrayNumeriUtente = [];
+
+    // 7) ELEMENTO INPUT CHE COLLEGO A JS TRAMITE LA CLASSE AGGIUNTA
+    let numeriUtente = document.querySelectorAll(".input-utente");
+
+    // 7) CICLO FOR PER INSERIRE NELL'ARRAYNUMERIUTENTE I NUMERI INSERITI DALL UTENTE
+    for (let i = 0; i < numeriUtente.length; i++) {
+        let numeroUtente = Number(numeriUtente[i].value);
+        arrayNumeriUtente.push(numeroUtente);
+    }
+
+    // CONFRONTO FRA ARRAY NUMERI UTENTE E ARRAY NUMERI RANDOM
+    // ARRAY VUOTO DOVE INSERIRE I NUMERI CHE COMBACIANO
+    let numeriIndovinati = [];
+
+    // CICLO FOR CHE INSERISCE NELL'ARRAY I NUMERI CHE COMBACIANO
+    for (let i = 0; i < arrayNumeriUtente.length; i++) {
+        let numero = arrayNumeriUtente[i];
+
+        if (arrayDiCinqueNumeriVuoto.includes(numero))
+            numeriIndovinati.push(numero);
+    }
 
 
-// 7) ARRAY VUOTO PER I NUMERI CHE INSERIRA' L'UTENTE
-let arrayNumeriUtente = [];
-
-// 7) ELEMENTO INPUT CHE COLLEGO A JS TRAMITE LA CLASSE AGGIUNTA
-let numeriUtente = document.querySelectorAll(".input-utente");
-
-// 7) CICLO FOR PER INSERIRE NELL'ARRAYNUMERIUTENTE I NUMERI INSERITI DALL UTENTE
-for ( let i = 0; i < numeriUtente.length; i++) {
-let numeroUtente = Number(numeriUtente[i].value);
-arrayNumeriUtente.push(numeroUtente);
-}
-
-// CONFRONTO FRA ARRAY NUMERI UTENTE E ARRAY NUMERI RANDOM
-// ARRAY VUOTO DOVE INSERIRE I NUMERI CHE COMBACIANO
-let numeriIndovinati = [];
-
-// CICLO FOR CHE INSERISCE NELL'ARRAY I NUMERI CHE COMBACIANO
-for (let i = 0; i < numeriUtente.lengtht; i++) {
-    let numero = arrayNumeriUtente[i];
-    
-    if ( arrayDiCinqueNumeriVuoto.includes(numero))
-        numeriIndovinati.push(numero);
-}
-
-// MESSAGGIO PER I NUMERI CHE COINCIDONO
-message.innerHTML = `Hai indovinato ${numeriIndovinati.length} numeri: ${numeriIndovinati.join(", ")}
+    // MESSAGGIO PER I NUMERI CHE COINCIDONO
+    message.innerHTML = `Hai indovinato ${numeriIndovinati.length} numeri: ${numeriIndovinati.join(", ")}`;
+});
