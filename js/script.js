@@ -9,6 +9,10 @@
 // di cinque numeri random, trasformandoli in una stringa HTML, scrivo nel mio file HTML 
 // dentro a numberList usando inner.HTML 
 // =========================================================================================
+// COUNTDOWN di 30 secondi
+// Creo una variabile per i secondi che deve essere === 30.
+// Creo un event timer con setInterval in modo che ogni secondo scenda di 1
+// lo mostro in HTML usando l'id countdown che ho "preso" in precedenza.
 
 
 
